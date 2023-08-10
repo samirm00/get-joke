@@ -1,0 +1,86 @@
+body {
+    background-color: #5d5b5b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#btn {
+    display: block;
+    background: #4caf50;
+    color: white;
+    font-size: 16px;
+    padding: 15px 30px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#btn:hover {
+    background: #45a049;
+}
+#joke-container {
+    background: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.category,
+.type,
+.setup,
+.delivery,
+.lang,
+.safe {
+    margin: 10px;
+}
+
+.flags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    list-style: none;
+}
+
+.flags li {
+    background: #333;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.flags li:hover {
+    background: #444;
+}
+
+.flags li.true:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.flags li.false:before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.lang,
+.safe {
+    font-style: italic;
+    color: #aaa;
+}
