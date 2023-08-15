@@ -6,11 +6,18 @@ const updateJoke = (jokeDom, jokeData) => {
     jokeDom.querySelector('.type').innerText =
         jokeData.type === 'twopart' ? 'Two-Part Joke' : 'Single Joke';
 
-    // updating setup
-    jokeDom.querySelector('.setup').innerText = jokeData.setup;
+    if (jokeData.type === 'twopart') {
+        // updating setup
+        jokeDom.querySelector('.setup').classList.remove('hide');
+        jokeDom.querySelector('.setup').innerText = jokeData.setup;
 
-    // updating delivery
-    jokeDom.querySelector('.delivery').innerText = jokeData.delivery;
+        // updating delivery
+        jokeDom.querySelector('.delivery').classList.remove('hide');
+        jokeDom.querySelector('.delivery').innerText = jokeData.delivery;
+    } else {
+        jokeDom.querySelector('.setup').classList.add('hide');
+        jokeDom.querySelector('.delivery').classList.add('hide');
+    }
 
     // updating flags
     const flagsList = jokeDom.querySelector('.flags');

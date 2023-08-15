@@ -17,17 +17,22 @@ const createJoke = (jokeData) => {
     type.innerText =
         jokeData.type === 'twopart' ? 'Two-Part Joke' : 'Single Joke';
 
-    // setup
-    const setup = document.createElement('p');
-    setup.className = 'setup';
-    setup.id = 'setup-' + jokeData.id;
-    setup.innerText = jokeData.setup;
+    container.append(category, type);
 
-    // delivery
-    const delivery = document.createElement('p');
-    delivery.className = 'delivery';
-    delivery.id = 'delivery-' + jokeData.id;
-    delivery.innerText = jokeData.delivery;
+    if (jokeData.type === 'twopart') {
+        // setup
+        const setup = document.createElement('p');
+        setup.className = 'setup';
+        setup.id = 'setup-' + jokeData.id;
+        setup.innerText = jokeData.setup;
+
+        // delivery
+        const delivery = document.createElement('p');
+        delivery.className = 'delivery';
+        delivery.id = 'delivery-' + jokeData.id;
+        delivery.innerText = jokeData.delivery;
+        container.append(setup, delivery);
+    }
 
     // flags
     const flagsList = document.createElement('ul');
@@ -51,7 +56,7 @@ const createJoke = (jokeData) => {
     safe.className = 'safe';
     safe.id = 'safe-' + jokeData.safe;
     safe.innerText = 'Safe: ' + jokeData.safe;
-    container.append(category, type, setup, delivery, flagsList, lang, safe);
+    container.append(flagsList, lang, safe);
 
     return container;
 };
