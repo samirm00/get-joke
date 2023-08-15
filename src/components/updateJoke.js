@@ -8,7 +8,6 @@ const updateJoke = (jokeDom, jokeData) => {
 
     if (jokeData.type === 'twopart') {
         // updating setup
-        jokeDom.querySelector('.setup').classList.remove('hide');
         jokeDom.querySelector('.setup').innerText = jokeData.setup;
 
         // updating delivery
