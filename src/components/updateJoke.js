@@ -15,7 +15,7 @@ const updateJoke = (jokeDom, jokeData) => {
         jokeDom.querySelector('.delivery').classList.remove('hide');
         jokeDom.querySelector('.delivery').innerText = jokeData.delivery;
     } else {
-        jokeDom.querySelector('.setup').classList.add('hide');
+        jokeDom.querySelector('.setup').innerText = jokeData.joke;
         jokeDom.querySelector('.delivery').classList.add('hide');
     }
 

@@ -19,19 +19,22 @@ const createJoke = (jokeData) => {
 
     container.append(category, type);
 
-    if (jokeData.type === 'twopart') {
-        // setup
-        const setup = document.createElement('p');
-        setup.className = 'setup';
-        setup.id = 'setup-' + jokeData.id;
-        setup.innerText = jokeData.setup;
+    // setup
+    const setup = document.createElement('p');
+    setup.className = 'setup';
+    setup.id = 'setup-' + jokeData.id;
+    setup.innerText = jokeData.setup;
+    container.append(setup);
 
+    if (jokeData.type === 'twopart') {
         // delivery
         const delivery = document.createElement('p');
         delivery.className = 'delivery';
         delivery.id = 'delivery-' + jokeData.id;
         delivery.innerText = jokeData.delivery;
         container.append(setup, delivery);
+    } else {
+        setup.innerText = jokeData.joke;
     }
 
     // flags
